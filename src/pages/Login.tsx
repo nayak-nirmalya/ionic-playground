@@ -1,4 +1,5 @@
 import {
+  IonButton,
   IonCard,
   IonCardContent,
   IonContent,
@@ -42,6 +43,14 @@ const Login: React.FC = () => {
                 labelPlacement="floating"
                 fill="outline"
               ></IonInput>
+
+              <IonButton
+                className="ion-margin-top"
+                expand="block"
+                type="submit"
+              >
+                Login
+              </IonButton>
             </form>
           </IonCardContent>
         </IonCard>
