@@ -11,7 +11,7 @@ import {
   IonToolbar,
 } from "@ionic/react";
 import React from "react";
-import { logInOutline } from "ionicons/icons";
+import { logInOutline, personCircleOutline } from "ionicons/icons";
 
 const Login: React.FC = () => {
   const doLogin = (event: any) => {
@@ -62,6 +62,7 @@ const Login: React.FC = () => {
                 routerLink="/register"
               >
                 Register
+                <IonIcon icon={personCircleOutline} slot="end" />
               </IonButton>
             </form>
           </IonCardContent>
