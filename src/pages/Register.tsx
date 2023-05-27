@@ -7,7 +7,7 @@ import {
 } from "@ionic/react";
 import React from "react";
 
-const Login: React.FC = () => {
+const Register: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -15,9 +15,9 @@ const Login: React.FC = () => {
           <IonTitle>Page Title</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">UI Goes Here.</IonContent>
+      <IonContent className="ion-padding">UI goes here...</IonContent>
     </IonPage>
   );
 };
 
-export default Login;
+export default Register;
