@@ -13,7 +13,7 @@ const Home: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Nirmalya Nayak</IonTitle>
+          <IonTitle>Laxmipriya Nayak</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
