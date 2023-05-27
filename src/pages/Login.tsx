@@ -35,6 +35,13 @@ const Login: React.FC = () => {
                 labelPlacement="floating"
                 fill="outline"
               ></IonInput>
+              <IonInput
+                className="ion-margin-top"
+                label="Password"
+                type="password"
+                labelPlacement="floating"
+                fill="outline"
+              ></IonInput>
             </form>
           </IonCardContent>
         </IonCard>
