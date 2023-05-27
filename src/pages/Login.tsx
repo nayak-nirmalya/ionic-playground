@@ -24,7 +24,7 @@ const Login: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="success">
-          <IonTitle>Page Title</IonTitle>
+          <IonTitle>Log In</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent scrollY={false}>
