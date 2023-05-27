@@ -36,7 +36,7 @@ const Login: React.FC = () => {
   const doLogin = (event: any) => {
     event.preventDefault();
     console.log("DoLogIn.");
-    // router.push('/home', 'root');
+    router.push("/app", "root");
   };
 
   const finishIntro = async () => {
