@@ -3,14 +3,15 @@ import {
   IonCard,
   IonCardContent,
   IonContent,
-  IonFooter,
   IonHeader,
+  IonIcon,
   IonInput,
   IonPage,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
 import React from "react";
+import { logInOutline } from "ionicons/icons";
 
 const Login: React.FC = () => {
   const doLogin = (event: any) => {
@@ -50,6 +51,7 @@ const Login: React.FC = () => {
                 type="submit"
               >
                 Login
+                <IonIcon icon={logInOutline} slot="end" />
               </IonButton>
 
               <IonButton
