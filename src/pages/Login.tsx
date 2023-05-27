@@ -11,14 +11,27 @@ import {
   IonToolbar,
   useIonRouter,
 } from "@ionic/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { logInOutline, personCircleOutline } from "ionicons/icons";
 import FCCLogo from "../assets/fcc.svg";
 import Intro from "../components/Intro";
+import { Preferences } from "@capacitor/preferences";
+
+const INTRO_KEY = "intro_seen";
 
 const Login: React.FC = () => {
   const router = useIonRouter();
-  const [introSeen, setIntroSeen] = useState(false);
+  const [introSeen, setIntroSeen] = useState(true);
+
+  useEffect(() => {
+    const checkStorage = async () => {
+      const seen = await Preferences.get({ key: INTRO_KEY });
+      console.log("Login.tsx: checkStorage: seen =>", seen);
+      setIntroSeen(seen.value === "true");
+    };
+
+    checkStorage();
+  }, []);
 
   const doLogin = (event: any) => {
     event.preventDefault();
@@ -29,6 +42,12 @@ const Login: React.FC = () => {
   const finishIntro = async () => {
     console.log("Finished!");
     setIntroSeen(true);
+    Preferences.set({ key: INTRO_KEY, value: "true" });
+  };
+
+  const seeIntroAgain = () => {
+    setIntroSeen(false);
+    Preferences.remove({ key: INTRO_KEY });
   };
 
   return (
@@ -82,6 +101,19 @@ const Login: React.FC = () => {
                     routerLink="/register"
                   >
                     Register
+                    <IonIcon icon={personCircleOutline} slot="end" />
+                  </IonButton>
+
+                  <IonButton
+                    className="ion-margin-top"
+                    expand="block"
+                    type="button"
+                    color="medium"
+                    size="small"
+                    fill="clear"
+                    onClick={seeIntroAgain}
+                  >
+                    Watch Intro Again
                     <IonIcon icon={personCircleOutline} slot="end" />
                   </IonButton>
                 </form>
