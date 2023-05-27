@@ -9,6 +9,7 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  useIonLoading,
   useIonRouter,
 } from "@ionic/react";
 import React, { useEffect, useState } from "react";
@@ -22,6 +23,7 @@ const INTRO_KEY = "intro_seen";
 const Login: React.FC = () => {
   const router = useIonRouter();
   const [introSeen, setIntroSeen] = useState(true);
+  const [present, dismiss] = useIonLoading();
 
   useEffect(() => {
     const checkStorage = async () => {
@@ -33,10 +35,13 @@ const Login: React.FC = () => {
     checkStorage();
   }, []);
 
-  const doLogin = (event: any) => {
+  const doLogin = async (event: any) => {
     event.preventDefault();
-    console.log("DoLogIn.");
-    router.push("/app", "root");
+    await present("Logging In...");
+    setTimeout(async () => {
+      dismiss();
+      router.push("/app", "root");
+    }, 2000);
   };
 
   const finishIntro = async () => {
