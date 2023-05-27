@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "test.e2e": "cypress run",
     "test.unit": "vitest",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync": "ionic cap sync",
+    "open:android": "npx cap open android"
   },
   "dependencies": {
     "@capacitor/android": "5.0.4",
