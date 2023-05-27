@@ -26,7 +26,10 @@ const Login: React.FC = () => {
     // router.push('/home', 'root');
   };
 
-  const finishIntro = async () => {};
+  const finishIntro = async () => {
+    console.log("Finished!");
+    setIntroSeen(true);
+  };
 
   return (
     <>
