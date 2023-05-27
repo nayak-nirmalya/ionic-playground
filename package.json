@@ -11,7 +11,8 @@
     "test.unit": "vitest",
     "lint": "eslint",
     "sync": "ionic cap sync",
-    "open:android": "npx cap open android"
+    "open:android": "npx cap open android",
+    "run:android": "ionic cap run android --livereload --external"
   },
   "dependencies": {
     "@capacitor/android": "5.0.4",
