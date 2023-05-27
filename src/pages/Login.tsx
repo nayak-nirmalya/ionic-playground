@@ -1,7 +1,10 @@
 import {
+  IonCard,
+  IonCardContent,
   IonContent,
   IonFooter,
   IonHeader,
+  IonInput,
   IonPage,
   IonTitle,
   IonToolbar,
@@ -21,7 +24,21 @@ const Login: React.FC = () => {
           <IonTitle>Page Title</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent className="ion-padding">UI Goes Here.</IonContent>
+      <IonContent>
+        <IonCard>
+          <IonCardContent>
+            <form onSubmit={doLogin}>
+              <IonInput
+                label="E-Mail"
+                type="email"
+                placeholder="john.doe@gmail.com"
+                labelPlacement="floating"
+                fill="outline"
+              ></IonInput>
+            </form>
+          </IonCardContent>
+        </IonCard>
+      </IonContent>
     </IonPage>
   );
 };
