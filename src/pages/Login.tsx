@@ -1,5 +1,6 @@
 import {
   IonContent,
+  IonFooter,
   IonHeader,
   IonPage,
   IonTitle,
@@ -8,10 +9,15 @@ import {
 import React from "react";
 
 const Login: React.FC = () => {
+  const doLogin = (event: any) => {
+    event.preventDefault();
+    console.log("DoLogIn.");
+  };
+
   return (
     <IonPage>
       <IonHeader>
-        <IonToolbar>
+        <IonToolbar color="success">
           <IonTitle>Page Title</IonTitle>
         </IonToolbar>
       </IonHeader>
