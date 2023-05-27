@@ -12,6 +12,7 @@ import {
 } from "@ionic/react";
 import React from "react";
 import { logInOutline, personCircleOutline } from "ionicons/icons";
+import FCCLogo from "../assets/fcc.svg";
 
 const Login: React.FC = () => {
   const doLogin = (event: any) => {
@@ -26,7 +27,11 @@ const Login: React.FC = () => {
           <IonTitle>Page Title</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent scrollY={false}>
+        <div className="ion-text-center ion-padding">
+          <img src={FCCLogo} alt="FCG Logo" width="150" />
+        </div>
+
         <IonCard>
           <IonCardContent>
             <form onSubmit={doLogin}>
