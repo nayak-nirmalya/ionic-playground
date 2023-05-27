@@ -2,11 +2,14 @@ import {
   IonButton,
   IonCard,
   IonCardContent,
+  IonCol,
   IonContent,
+  IonGrid,
   IonHeader,
   IonIcon,
   IonInput,
   IonPage,
+  IonRow,
   IonTitle,
   IonToolbar,
   useIonLoading,
@@ -66,64 +69,74 @@ const Login: React.FC = () => {
               <IonTitle>Log In</IonTitle>
             </IonToolbar>
           </IonHeader>
-          <IonContent scrollY={false}>
-            <div className="ion-text-center ion-padding">
-              <img src={FCCLogo} alt="FCG Logo" width="150" />
-            </div>
+          <IonContent scrollY={false} className="ion-padding">
+            <IonGrid fixed>
+              <IonRow className="ion-justify-content-center">
+                <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+                  <div className="ion-text-center ion-padding">
+                    <img src={FCCLogo} alt="FCG Logo" width="150" />
+                  </div>
+                </IonCol>
+              </IonRow>
 
-            <IonCard>
-              <IonCardContent>
-                <form onSubmit={doLogin}>
-                  <IonInput
-                    label="E-Mail"
-                    type="email"
-                    placeholder="john.doe@gmail.com"
-                    labelPlacement="floating"
-                    fill="outline"
-                  ></IonInput>
-                  <IonInput
-                    className="ion-margin-top"
-                    label="Password"
-                    type="password"
-                    labelPlacement="floating"
-                    fill="outline"
-                  ></IonInput>
+              <IonRow className="ion-justify-content-center">
+                <IonCol size="12" sizeMd="8" sizeLg="6" sizeXl="4">
+                  <IonCard>
+                    <IonCardContent>
+                      <form onSubmit={doLogin}>
+                        <IonInput
+                          label="E-Mail"
+                          type="email"
+                          placeholder="john.doe@gmail.com"
+                          labelPlacement="floating"
+                          fill="outline"
+                        ></IonInput>
+                        <IonInput
+                          className="ion-margin-top"
+                          label="Password"
+                          type="password"
+                          labelPlacement="floating"
+                          fill="outline"
+                        ></IonInput>
 
-                  <IonButton
-                    className="ion-margin-top"
-                    expand="block"
-                    type="submit"
-                  >
-                    Login
-                    <IonIcon icon={logInOutline} slot="end" />
-                  </IonButton>
+                        <IonButton
+                          className="ion-margin-top"
+                          expand="block"
+                          type="submit"
+                        >
+                          Login
+                          <IonIcon icon={logInOutline} slot="end" />
+                        </IonButton>
 
-                  <IonButton
-                    className="ion-margin-top"
-                    expand="block"
-                    type="button"
-                    color="secondary"
-                    routerLink="/register"
-                  >
-                    Register
-                    <IonIcon icon={personCircleOutline} slot="end" />
-                  </IonButton>
+                        <IonButton
+                          className="ion-margin-top"
+                          expand="block"
+                          type="button"
+                          color="secondary"
+                          routerLink="/register"
+                        >
+                          Register
+                          <IonIcon icon={personCircleOutline} slot="end" />
+                        </IonButton>
 
-                  <IonButton
-                    className="ion-margin-top"
-                    expand="block"
-                    type="button"
-                    color="medium"
-                    size="small"
-                    fill="clear"
-                    onClick={seeIntroAgain}
-                  >
-                    Watch Intro Again
-                    <IonIcon icon={personCircleOutline} slot="end" />
-                  </IonButton>
-                </form>
-              </IonCardContent>
-            </IonCard>
+                        <IonButton
+                          className="ion-margin-top"
+                          expand="block"
+                          type="button"
+                          color="medium"
+                          size="small"
+                          fill="clear"
+                          onClick={seeIntroAgain}
+                        >
+                          Watch Intro Again
+                          <IonIcon icon={personCircleOutline} slot="end" />
+                        </IonButton>
+                      </form>
+                    </IonCardContent>
+                  </IonCard>
+                </IonCol>
+              </IonRow>
+            </IonGrid>
           </IonContent>
         </IonPage>
       )}
