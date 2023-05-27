@@ -2,6 +2,7 @@ import {
   IonButton,
   IonContent,
   IonHeader,
+  IonIcon,
   IonPage,
   IonText,
   IonTitle,
@@ -10,6 +11,7 @@ import {
 import React from "react";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
+import { arrowForwardOutline } from "ionicons/icons";
 
 import "./Intro.css";
 import IntroSVG1 from "../assets/intro/1.svg";
@@ -22,7 +24,11 @@ interface ContainerProps {
 
 const SwiperButtonNext = ({ children }: any) => {
   const swiper = useSwiper();
-  return <IonButton onClick={() => swiper.slideNext()}>{children}</IonButton>;
+  return (
+    <IonButton shape="round" onClick={() => swiper.slideNext()}>
+      {children}
+    </IonButton>
+  );
 };
 
 const Intro: React.FC<ContainerProps> = ({ onFinish }) => {
@@ -33,14 +39,18 @@ const Intro: React.FC<ContainerProps> = ({ onFinish }) => {
         <IonText>
           <h3>Build Awesome Apps with Ionic UI Components!</h3>
         </IonText>
-        <SwiperButtonNext />
+        <SwiperButtonNext>
+          <IonIcon icon={arrowForwardOutline} />
+        </SwiperButtonNext>
       </SwiperSlide>
       <SwiperSlide>
         <img src={IntroSVG2} alt="Intro2" />
         <IonText>
           <h3>Create Poweful Native Apps with Capacitor.</h3>
         </IonText>
-        <SwiperButtonNext />
+        <SwiperButtonNext>
+          <IonIcon icon={arrowForwardOutline} />
+        </SwiperButtonNext>
       </SwiperSlide>
       <SwiperSlide>
         <img src={IntroSVG3} alt="Intro3" />
