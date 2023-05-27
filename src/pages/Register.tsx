@@ -1,5 +1,7 @@
 import {
+  IonBackButton,
   IonButton,
+  IonButtons,
   IonCard,
   IonCardContent,
   IonContent,
@@ -27,6 +29,9 @@ const Register: React.FC = () => {
     <IonPage>
       <IonHeader>
         <IonToolbar color="success">
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/" />
+          </IonButtons>
           <IonTitle>Create Account</IonTitle>
         </IonToolbar>
       </IonHeader>
