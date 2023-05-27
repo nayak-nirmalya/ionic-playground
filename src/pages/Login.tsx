@@ -51,6 +51,16 @@ const Login: React.FC = () => {
               >
                 Login
               </IonButton>
+
+              <IonButton
+                className="ion-margin-top"
+                expand="block"
+                type="button"
+                color="secondary"
+                routerLink="/register"
+              >
+                Register
+              </IonButton>
             </form>
           </IonCardContent>
         </IonCard>
