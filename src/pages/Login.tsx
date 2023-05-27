@@ -9,15 +9,20 @@ import {
   IonPage,
   IonTitle,
   IonToolbar,
+  useIonRouter,
 } from "@ionic/react";
-import React from "react";
+import React, { useState } from "react";
 import { logInOutline, personCircleOutline } from "ionicons/icons";
 import FCCLogo from "../assets/fcc.svg";
 
 const Login: React.FC = () => {
+  const router = useIonRouter();
+  const [introSeen, setIntroSeen] = useState(false);
+
   const doLogin = (event: any) => {
     event.preventDefault();
     console.log("DoLogIn.");
+    // router.push('/home', 'root');
   };
 
   return (
