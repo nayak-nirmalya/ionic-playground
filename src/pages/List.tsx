@@ -6,6 +6,7 @@ import {
   IonIcon,
   IonMenuButton,
   IonPage,
+  IonSearchbar,
   IonTitle,
   IonToolbar,
   useIonViewWillEnter,
@@ -44,6 +45,10 @@ const List: React.FC = () => {
               <IonIcon slot="icon-only" icon={trashBinOutline} color="light" />
             </IonButton>
           </IonButtons>
+        </IonToolbar>
+
+        <IonToolbar color="success">
+          <IonSearchbar />
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">List UI</IonContent>
