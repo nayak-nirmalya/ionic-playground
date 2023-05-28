@@ -1,11 +1,13 @@
 import {
   IonContent,
   IonHeader,
+  IonIcon,
   IonItem,
   IonMenu,
   IonMenuToggle,
   IonPage,
   IonRouterOutlet,
+  IonSplitPane,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -24,30 +26,37 @@ const Menu: React.FC = () => {
 
   return (
     <IonPage>
-      <IonMenu contentId="main">
-        <IonHeader>
-          <IonToolbar color="secondary">
-            <IonTitle>Menu</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent className="ion-padding">
-          {paths.map((path, index) => (
-            <IonMenuToggle key={index}>
-              <IonItem routerDirection="none" routerLink={path.url}>
-                {path.name}
-              </IonItem>
-            </IonMenuToggle>
-          ))}
-        </IonContent>
-      </IonMenu>
+      <IonSplitPane contentId="main">
+        <IonMenu contentId="main">
+          <IonHeader>
+            <IonToolbar color="secondary">
+              <IonTitle>Menu</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent className="ion-padding">
+            {paths.map((path, index) => (
+              <IonMenuToggle autoHide={false} key={index}>
+                <IonItem
+                  detail={false}
+                  routerDirection="none"
+                  routerLink={path.url}
+                >
+                  <IonIcon slot="start" icon={path.icon} />
+                  {path.name}
+                </IonItem>
+              </IonMenuToggle>
+            ))}
+          </IonContent>
+        </IonMenu>
 
-      <IonRouterOutlet id="main">
-        <Route exact path="/app/list" component={List} />
-        <Route path="/app/settings" component={Settings} />
-        <Route exact path="/app">
-          <Redirect to="/app/list" />
-        </Route>
-      </IonRouterOutlet>
+        <IonRouterOutlet id="main">
+          <Route exact path="/app/list" component={List} />
+          <Route path="/app/settings" component={Settings} />
+          <Route exact path="/app">
+            <Redirect to="/app/list" />
+          </Route>
+        </IonRouterOutlet>
+      </IonSplitPane>
     </IonPage>
   );
 };
