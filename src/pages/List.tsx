@@ -6,6 +6,7 @@ import {
   IonCardContent,
   IonChip,
   IonContent,
+  IonDatetime,
   IonFab,
   IonFabButton,
   IonHeader,
@@ -43,7 +44,7 @@ const List: React.FC = () => {
     useState<HTMLElement | null>(null);
   const page = useRef(null);
 
-  const [activeSegment, setActiveSegment] = useState<any>("detail");
+  const [activeSegment, setActiveSegment] = useState<any>("details");
 
   useEffect(() => {
     setPresentingElement(page.current);
@@ -178,7 +179,28 @@ const List: React.FC = () => {
               </IonSegment>
             </IonToolbar>
           </IonHeader>
-          <IonContent>SHEET</IonContent>
+          <IonContent className="ion-padding">
+            {activeSegment === "details" && (
+              <IonCard>
+                <IonCardContent className="ion-no-padding">
+                  <IonItem lines="none">
+                    <IonAvatar slot="start">
+                      <IonImg src={selectedUser?.picture.thumbnail} />
+                    </IonAvatar>
+                    <IonLabel>
+                      {selectedUser?.name.first} {selectedUser?.name.last}
+                      <p>{selectedUser?.email}</p>
+                    </IonLabel>
+                    <IonChip slot="end" color="primary">
+                      {selectedUser?.nat}
+                    </IonChip>
+                  </IonItem>
+                </IonCardContent>
+              </IonCard>
+            )}
+
+            {activeSegment === "calender" && <IonDatetime />}
+          </IonContent>
         </IonModal>
 
         <IonModal
