@@ -11,6 +11,7 @@
     "test.unit": "vitest",
     "lint": "eslint",
     "sync": "ionic cap sync",
+    "electron": "npx cap open @capacitor-community/electron",
     "open:android": "npx cap open android",
     "run:android": "ionic capacitor run android -l --external"
   },
