@@ -17,6 +17,7 @@
   "dependencies": {
     "@capacitor/android": "5.0.4",
     "@capacitor/app": "5.0.2",
+    "@capacitor/camera": "^5.0.2",
     "@capacitor/core": "5.0.4",
     "@capacitor/haptics": "5.0.2",
     "@capacitor/keyboard": "5.0.2",
