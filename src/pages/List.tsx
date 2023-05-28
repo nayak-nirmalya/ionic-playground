@@ -19,6 +19,8 @@ import {
   IonRefresher,
   IonRefresherContent,
   IonSearchbar,
+  IonSegment,
+  IonSegmentButton,
   IonSkeletonText,
   IonTitle,
   IonToolbar,
@@ -40,6 +42,8 @@ const List: React.FC = () => {
   const [presentingElement, setPresentingElement] =
     useState<HTMLElement | null>(null);
   const page = useRef(null);
+
+  const [activeSegment, setActiveSegment] = useState<any>("detail");
 
   useEffect(() => {
     setPresentingElement(page.current);
@@ -155,13 +159,23 @@ const List: React.FC = () => {
           onIonModalDidDismiss={() => setSelectedUser(null)}
         >
           <IonHeader>
-            <IonToolbar color="success">
+            <IonToolbar color="light">
               <IonButtons slot="start">
                 <IonButton onClick={() => modal.current?.dismiss()}>
                   Close
                 </IonButton>
               </IonButtons>
               <IonTitle>{selectedUser?.name.first}</IonTitle>
+            </IonToolbar>
+
+            <IonToolbar color="light">
+              <IonSegment
+                value={activeSegment}
+                onIonChange={(ev) => setActiveSegment(ev.detail.value!)}
+              >
+                <IonSegmentButton value="details">Details</IonSegmentButton>
+                <IonSegmentButton value="calender">Calender</IonSegmentButton>
+              </IonSegment>
             </IonToolbar>
           </IonHeader>
           <IonContent>SHEET</IonContent>
