@@ -6,6 +6,8 @@ import {
   IonCardContent,
   IonChip,
   IonContent,
+  IonFab,
+  IonFabButton,
   IonHeader,
   IonIcon,
   IonImg,
@@ -24,8 +26,8 @@ import {
   useIonToast,
   useIonViewWillEnter,
 } from "@ionic/react";
-import { trashBinOutline } from "ionicons/icons";
-import React, { useRef, useState } from "react";
+import { addOutline, trashBinOutline } from "ionicons/icons";
+import React, { useEffect, useRef, useState } from "react";
 
 const List: React.FC = () => {
   const [loading, setLoading] = useState(true);
@@ -34,6 +36,14 @@ const List: React.FC = () => {
   const [showToast] = useIonToast();
   const [selectedUser, setSelectedUser] = useState<any>(null);
   const modal = useRef<HTMLIonModalElement>(null);
+  const cardModal = useRef<HTMLIonModalElement>(null);
+  const [presentingElement, setPresentingElement] =
+    useState<HTMLElement | null>(null);
+  const page = useRef(null);
+
+  useEffect(() => {
+    setPresentingElement(page.current);
+  }, []);
 
   useIonViewWillEnter(async () => {
     const users = await getUsers();
@@ -76,7 +86,7 @@ const List: React.FC = () => {
   };
 
   return (
-    <IonPage>
+    <IonPage ref={page}>
       <IonHeader>
         <IonToolbar color="success">
           <IonButtons slot="start">
@@ -142,7 +152,7 @@ const List: React.FC = () => {
           initialBreakpoint={0.5}
           ref={modal}
           isOpen={selectedUser !== null}
-          onIonModalDidDismiss={() => selectedUser(null)}
+          onIonModalDidDismiss={() => setSelectedUser(null)}
         >
           <IonHeader>
             <IonToolbar color="success">
@@ -151,13 +161,38 @@ const List: React.FC = () => {
                   Close
                 </IonButton>
               </IonButtons>
-              <IonTitle>User</IonTitle>
+              <IonTitle>{selectedUser?.name.first}</IonTitle>
             </IonToolbar>
           </IonHeader>
-
           <IonContent>SHEET</IonContent>
         </IonModal>
+
+        <IonModal
+          ref={cardModal}
+          trigger="card-modal"
+          presentingElement={presentingElement!}
+        >
+          <IonHeader>
+            <IonToolbar color="success">
+              <IonButtons slot="start">
+                <IonButton onClick={() => cardModal.current?.dismiss()}>
+                  Close
+                </IonButton>
+              </IonButtons>
+              <IonTitle>Card Modal</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent>
+            <p>My Card Modal</p>
+          </IonContent>
+        </IonModal>
       </IonContent>
+
+      <IonFab vertical="bottom" horizontal="end" slot="fixed">
+        <IonFabButton id="card-modal">
+          <IonIcon icon={addOutline} />
+        </IonFabButton>
+      </IonFab>
     </IonPage>
   );
 };
