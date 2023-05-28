@@ -16,6 +16,7 @@ import {
   IonRefresher,
   IonRefresherContent,
   IonSearchbar,
+  IonSkeletonText,
   IonTitle,
   IonToolbar,
   useIonAlert,
@@ -94,6 +95,26 @@ const List: React.FC = () => {
         <IonRefresher slot="fixed" onIonRefresh={(ev) => doRefresh(ev)}>
           <IonRefresherContent />
         </IonRefresher>
+        {loading &&
+          [...Array(10)].map((_, index) => (
+            <IonCard key={index}>
+              <IonCardContent className="ion-no-padding">
+                <IonItem lines="none">
+                  <IonAvatar slot="start">
+                    <IonSkeletonText />
+                  </IonAvatar>
+                  <IonLabel>
+                    <IonSkeletonText animated style={{ width: "150px" }} />
+                    <p>
+                      <IonSkeletonText />
+                    </p>
+                  </IonLabel>
+                  <IonChip slot="end" color="primary"></IonChip>
+                </IonItem>
+              </IonCardContent>
+            </IonCard>
+          ))}
+
         {users.map((user, index) => (
           <IonCard key={index}>
             <IonCardContent className="ion-no-padding">
