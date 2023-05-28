@@ -31,6 +31,7 @@ import {
 } from "@ionic/react";
 import { addOutline, trashBinOutline } from "ionicons/icons";
 import React, { useEffect, useRef, useState } from "react";
+import "./List.css";
 
 const List: React.FC = () => {
   const [loading, setLoading] = useState(true);
