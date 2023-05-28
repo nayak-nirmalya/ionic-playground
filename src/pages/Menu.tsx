@@ -1,4 +1,5 @@
 import {
+  IonButton,
   IonContent,
   IonHeader,
   IonIcon,
@@ -13,7 +14,7 @@ import {
 } from "@ionic/react";
 import React from "react";
 import { Redirect, Route } from "react-router";
-import { homeOutline, newspaperOutline } from "ionicons/icons";
+import { homeOutline, logOutOutline, newspaperOutline } from "ionicons/icons";
 
 import List from "./List";
 import Settings from "./Settings";
@@ -46,6 +47,13 @@ const Menu: React.FC = () => {
                 </IonItem>
               </IonMenuToggle>
             ))}
+
+            <IonMenuToggle autoHide={false}>
+              <IonButton expand="full" routerLink="/" routerDirection="root">
+                <IonIcon slot="start" icon={logOutOutline} />
+                Logout
+              </IonButton>
+            </IonMenuToggle>
           </IonContent>
         </IonMenu>
 
