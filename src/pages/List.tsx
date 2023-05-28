@@ -13,6 +13,8 @@ import {
   IonLabel,
   IonMenuButton,
   IonPage,
+  IonRefresher,
+  IonRefresherContent,
   IonSearchbar,
   IonTitle,
   IonToolbar,
@@ -63,6 +65,12 @@ const List: React.FC = () => {
     });
   };
 
+  const doRefresh = async (event: any) => {
+    const data = await getUsers();
+    setUsers(data);
+    event.detail.complete();
+  };
+
   return (
     <IonPage>
       <IonHeader>
@@ -83,6 +91,9 @@ const List: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
+        <IonRefresher slot="fixed" onIonRefresh={(ev) => doRefresh(ev)}>
+          <IonRefresherContent />
+        </IonRefresher>
         {users.map((user, index) => (
           <IonCard key={index}>
             <IonCardContent className="ion-no-padding">
