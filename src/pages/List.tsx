@@ -4,9 +4,6 @@ import {
   IonHeader,
   IonMenuButton,
   IonPage,
-  IonTabBar,
-  IonTabButton,
-  IonTabs,
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
@@ -14,11 +11,17 @@ import React from "react";
 
 const List: React.FC = () => {
   return (
-    <IonTabs>
-      <IonTabBar slot="bottom">
-        <IonTabButton tab="tab1" href="/app/settings/tab1"></IonTabButton>
-      </IonTabBar>
-    </IonTabs>
+    <IonPage>
+      <IonHeader>
+        <IonToolbar color="success">
+          <IonButtons slot="start">
+            <IonMenuButton />
+          </IonButtons>
+          <IonTitle>List Page</IonTitle>
+        </IonToolbar>
+      </IonHeader>
+      <IonContent className="ion-padding">List UI</IonContent>
+    </IonPage>
   );
 };
 
