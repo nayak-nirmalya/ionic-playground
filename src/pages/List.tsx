@@ -12,6 +12,7 @@ import {
   IonItem,
   IonLabel,
   IonMenuButton,
+  IonModal,
   IonPage,
   IonRefresher,
   IonRefresherContent,
@@ -24,13 +25,15 @@ import {
   useIonViewWillEnter,
 } from "@ionic/react";
 import { trashBinOutline } from "ionicons/icons";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 const List: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState<any[]>([]);
   const [showAlert] = useIonAlert();
   const [showToast] = useIonToast();
+  const [selectedUser, setSelectedUser] = useState<any>(null);
+  const modal = useRef<HTMLIonModalElement>(null);
 
   useIonViewWillEnter(async () => {
     const users = await getUsers();
@@ -116,7 +119,7 @@ const List: React.FC = () => {
           ))}
 
         {users.map((user, index) => (
-          <IonCard key={index}>
+          <IonCard key={index} onClick={() => setSelectedUser(user)}>
             <IonCardContent className="ion-no-padding">
               <IonItem lines="none">
                 <IonAvatar slot="start">
@@ -133,6 +136,27 @@ const List: React.FC = () => {
             </IonCardContent>
           </IonCard>
         ))}
+
+        <IonModal
+          breakpoints={[0, 0.5, 0.8]}
+          initialBreakpoint={0.5}
+          ref={modal}
+          isOpen={selectedUser !== null}
+          onIonModalDidDismiss={() => selectedUser(null)}
+        >
+          <IonHeader>
+            <IonToolbar color="success">
+              <IonButtons slot="start">
+                <IonButton onClick={() => modal.current?.dismiss()}>
+                  Close
+                </IonButton>
+              </IonButtons>
+              <IonTitle>User</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+
+          <IonContent>SHEET</IonContent>
+        </IonModal>
       </IonContent>
     </IonPage>
   );
