@@ -31,7 +31,6 @@ const Login: React.FC = () => {
   useEffect(() => {
     const checkStorage = async () => {
       const seen = await Preferences.get({ key: INTRO_KEY });
-      console.log("Login.tsx: checkStorage: seen =>", seen);
       setIntroSeen(seen.value === "true");
     };
 
