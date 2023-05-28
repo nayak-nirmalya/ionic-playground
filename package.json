@@ -15,6 +15,7 @@
     "run:android": "ionic capacitor run android -l --external"
   },
   "dependencies": {
+    "@capacitor-community/electron": "^4.1.2",
     "@capacitor/android": "5.0.4",
     "@capacitor/app": "5.0.2",
     "@capacitor/assets": "^2.0.4",
