@@ -17,6 +17,7 @@ import {
   IonTitle,
   IonToolbar,
   useIonAlert,
+  useIonToast,
   useIonViewWillEnter,
 } from "@ionic/react";
 import { trashBinOutline } from "ionicons/icons";
@@ -26,6 +27,7 @@ const List: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState<any[]>([]);
   const [showAlert] = useIonAlert();
+  const [showToast] = useIonToast();
 
   useIonViewWillEnter(async () => {
     const users = await getUsers();
@@ -50,6 +52,11 @@ const List: React.FC = () => {
           text: "Delete",
           handler: () => {
             setUsers([]);
+            showToast({
+              message: "All Users Deleted!",
+              duration: 2000,
+              color: "danger",
+            });
           },
         },
       ],
