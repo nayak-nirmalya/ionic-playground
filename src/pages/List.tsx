@@ -4,8 +4,6 @@ import {
   IonButtons,
   IonCard,
   IonCardContent,
-  IonCardHeader,
-  IonCardTitle,
   IonChip,
   IonContent,
   IonHeader,
@@ -18,6 +16,7 @@ import {
   IonSearchbar,
   IonTitle,
   IonToolbar,
+  useIonAlert,
   useIonViewWillEnter,
 } from "@ionic/react";
 import { trashBinOutline } from "ionicons/icons";
@@ -26,6 +25,7 @@ import React, { useState } from "react";
 const List: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState<any[]>([]);
+  const [showAlert] = useIonAlert();
 
   useIonViewWillEnter(async () => {
     const users = await getUsers();
@@ -39,7 +39,22 @@ const List: React.FC = () => {
     return users.results;
   };
 
-  const clearList = () => {};
+  const clearList = () => {
+    showAlert({
+      header: "Confirm!",
+      message:
+        "Are you sure? You want to delete all users. This action can not be undone.",
+      buttons: [
+        { text: "Cancel", role: "cancel" },
+        {
+          text: "Delete",
+          handler: () => {
+            setUsers([]);
+          },
+        },
+      ],
+    });
+  };
 
   return (
     <IonPage>
