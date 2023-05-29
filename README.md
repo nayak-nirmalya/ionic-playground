@@ -62,9 +62,9 @@ Running commands with npm `npm run [command]`
 
 <img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/c408ddd5-1a92-4f16-bf6b-bbcf3ac1390f" width="360">
 
-### No More Profile
+### Login Screen
 
-<img src="readme_imgs/no_profile.png" width="360">
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/74c94b9b-00d8-4bbf-9954-1bbe48ab14ab" width="360">
 
 ### User SetUp Modal
 
