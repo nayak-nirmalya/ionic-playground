@@ -70,9 +70,9 @@ Running commands with npm `npm run [command]`
 
 <img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/b1cf93a3-d018-4f27-8a95-48538303e314" width="360">
 
-### Match Screen
+### User Loading Skeleton Screen
 
-<img src="readme_imgs/match_screen.png" width="360">
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/5c0b617b-47c3-4e21-8c67-355bb582fc2f" width="360">
 
 ### Chat List Screen
 
