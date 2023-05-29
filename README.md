@@ -102,4 +102,8 @@ Running commands with npm `npm run [command]`
 
 <img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/89621a57-e1b9-4af9-af74-6aa3dbbf134c" width="360">
 
+### Desktop App with Electron
+
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/cf5d35b5-cab0-44c5-8942-9ac67d68059b" width="560">
+
 </div>
