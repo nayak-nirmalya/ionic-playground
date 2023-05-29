@@ -66,9 +66,9 @@ Running commands with npm `npm run [command]`
 
 <img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/74c94b9b-00d8-4bbf-9954-1bbe48ab14ab" width="360">
 
-### User SetUp Modal
+### Logging In Loading Screen
 
-<img src="readme_imgs/modal_screen.png" width="360">
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/b1cf93a3-d018-4f27-8a95-48538303e314" width="360">
 
 ### Match Screen
 
