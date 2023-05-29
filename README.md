@@ -1,6 +1,10 @@
 # Ionic Demo App for Web, iOS, Android & Desktop
 
-This repository shows various Ionic & Capacitor Features.
+This repository shows various Ionic & Capacitor Features. Made using TypeScript, React, Vite, Ionic, Capacitor & Electron. Deployed to Netlify.
+
+Tutorial Followed: [freeCodeCamp](https://www.youtube.com/watch?v=K7ghUiXLef8)
+<br>
+Instructor: [Simon](https://twitter.com/schlimmson)
 
 Funcionalities:
 
