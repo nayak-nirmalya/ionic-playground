@@ -74,9 +74,9 @@ Running commands with npm `npm run [command]`
 
 <img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/5c0b617b-47c3-4e21-8c67-355bb582fc2f" width="360">
 
-### Chat List Screen
+### Home Screen
 
-<img src="readme_imgs/chat_screen.jpg" width="360">
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/11695607-eef2-45bb-9d06-56dc2d351602" width="360">
 
 ### Message Screen
 
