@@ -54,9 +54,9 @@ Running commands with npm `npm run [command]`
 
 <div align='center'>
 
-### LogIn Screen
+### Intro Card
 
-<img src="readme_imgs/login_screen.jpg" width="360">
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/47e1e3ec-dbdf-45b1-886a-07115d120b60" width="360">
 
 ### Home Screen
 
