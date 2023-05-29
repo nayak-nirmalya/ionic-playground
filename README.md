@@ -106,4 +106,8 @@ Running commands with npm `npm run [command]`
 
 <img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/cf5d35b5-cab0-44c5-8942-9ac67d68059b" width="560">
 
+### Web App with Ionic, React & Vite
+
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/dd1fc78b-f11b-4966-9858-ee3c40f026c5" width="720">
+
 </div>
