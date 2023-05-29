@@ -88,7 +88,7 @@ Running commands with npm `npm run [command]`
 
 ### User Detail Modal DateTime Screen
 
-<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/07a040b7-ff57-4f75-8f37-80e78ed0d361" width="360">
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/66fe23bb-3714-44bb-ad30-ec329c38e8ed" width="360">
 
 ### Sidebar Menu Screen
 
