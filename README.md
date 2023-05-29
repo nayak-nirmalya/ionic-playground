@@ -82,4 +82,8 @@ Running commands with npm `npm run [command]`
 
 <img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/07a040b7-ff57-4f75-8f37-80e78ed0d361" width="360">
 
+### Sidebar Menu Screen
+
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/95ad1b73-4524-449d-bc72-139a19c3fda0" width="360">
+
 </div>
