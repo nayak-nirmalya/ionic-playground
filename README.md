@@ -98,8 +98,8 @@ Running commands with npm `npm run [command]`
 
 <img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/995dc578-933d-4796-aa09-e9038b95aa91" width="360">
 
-### Sidebar Menu Screen
+### Gesture with Animation Screen
 
-<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/95ad1b73-4524-449d-bc72-139a19c3fda0" width="360">
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/89621a57-e1b9-4af9-af74-6aa3dbbf134c" width="360">
 
 </div>
