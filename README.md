@@ -5,6 +5,7 @@ This repository shows various Ionic & Capacitor Features.
 Funcionalities:
 
 - Ionic Slider to Show Sliding Components.
+- Native Camera & Image Picker.
 - Button Animation.
 - Various Gesture.
 - Pull Down to Refresh.
