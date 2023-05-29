@@ -58,9 +58,9 @@ Running commands with npm `npm run [command]`
 
 <img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/47e1e3ec-dbdf-45b1-886a-07115d120b60" width="360">
 
-### Home Screen
+### Register Screen
 
-<img src="readme_imgs/home_screen.png" width="360">
+<img src="https://github.com/nayak-nirmalya/ionic-playground/assets/52202635/c408ddd5-1a92-4f16-bf6b-bbcf3ac1390f" width="360">
 
 ### No More Profile
 
